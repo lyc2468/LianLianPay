@@ -1,0 +1,21 @@
+{
+    "name": "skies/lian-lian-pay",
+    "description": "Lian Lian payment SDK",
+    "type": "library",
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "ext-json": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "lyc2468",
+            "email": "709029461@qq.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Skies\\LianLianPay\\": "src/"
+        }
+    }
+}
