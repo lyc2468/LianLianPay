@@ -52,7 +52,7 @@ class LianLianPay
         ]);
     }
 
-    public function payment(string $transactionID, MerchantOrder $merchantOrder, Customer $customer)
+    public function payment(string $transactionID, MerchantOrder $merchantOrder, Customer $customer, string $cancelUrl = null, string $redirectUrl = null)
     {
         $paymentUrl = "/v3/merchants/{$this->merchantID}/payments";
 
@@ -61,10 +61,10 @@ class LianLianPay
             'merchant_id' => $this->merchantID,
             'biz_code' => $this->bizCode,
             'notification_url' => $this->notificationUrl,
-            'cancel_url' => $this->cancelUrl,
+            'cancel_url' => $cancelUrl ?? $this->cancelUrl,
             'country' => $this->country,
             'merchant_order' => $merchantOrder,
-            'redirect_url' => $this->redirectUrl,
+            'redirect_url' => $redirectUrl ?? $this->redirectUrl,
             'customer' => $customer,
         ]);
 
