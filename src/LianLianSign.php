@@ -25,7 +25,6 @@ class LianLianSign
         ksort($arr);
         $this->items(0, $arr, $strs);
         $msg = implode('&', $strs);
-        file_put_contents("./msg.txt", $msg);
         return $msg;
     }
 
