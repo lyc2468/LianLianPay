@@ -143,7 +143,7 @@ class LianLianPay
             return false;
         }
         $body = file_get_contents('php://input');
-
+        $body = preg_replace('/:\s*([0-9]*\.?[0-9]+)/', ': "$1"', $body);
         $data = json_decode($body, true);
 
         $signTools = new LianLianSign();
