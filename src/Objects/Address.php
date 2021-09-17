@@ -8,21 +8,15 @@ class Address extends ObjectBase
 {
     /**
      * Required: M
-     * @var string 街道
+     * @var string 详细地址 1
      */
-    public string $streetName;
+    public string $line1;
 
     /**
      * Required: C
-     * @var string
+     * @var string 详细地址 2
      */
-    public string $houseNumber;
-
-    /**
-     * Required: C
-     * @var string 区
-     */
-    public string $district;
+    public string $line2;
 
     /**
      * Required: M
