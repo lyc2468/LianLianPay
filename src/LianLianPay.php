@@ -136,6 +136,17 @@ class LianLianPay
 
     }
 
+    public function cancel(string $merchantTransactionId): array
+    {
+        $cancelUrl = "/v3/merchants/{$this->merchantID}/payments/{$merchantTransactionId}/cancelpay";
+        $response = $this->request($cancelUrl, [
+            'merchant_id' => $this->merchantID,
+            'merchant_transaction_id' => $merchantTransactionId,
+        ], 'get');
+
+        return json_decode($response->getBody(), true);
+    }
+
     public function verify()
     {
         $signature = $_SERVER['HTTP_SIGNATURE'];
